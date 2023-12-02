@@ -46,7 +46,7 @@
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Name</label>
                     <input type="text" class="form-control" id="recipient-name" name="Name"
-                        value="<?php echo htmlspecialchars($table['Name']); ?>">
+                        value="<?php echo htmlspecialchars($table['Name']); ?>" required>
                 </div>
                 
             </div> <!-- END OF SCROLLABLE -->

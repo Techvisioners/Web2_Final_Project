@@ -68,7 +68,7 @@
 
                     <!-- 2-->
                     <div class="card__items card__items--rose col-md-3 position-relative clickable"
-                        onclick="location.href='org_list.php'">
+                        onclick="location.href='../contr_sysusers/list_view.php'">
                         <div class="card__account d-flex flex-column gap-2 mt-3">
                             <i class="far fa-lock h3"></i>
                             <span><b>Accounts</b><br>

@@ -60,13 +60,13 @@
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Name</label>
                     <input type="text" class="form-control" id="recipient-name" name="Name"
-                        value="<?php echo htmlspecialchars($table['Name']); ?>">
+                        value="<?php echo htmlspecialchars($table['Name']); ?>" required>
                 </div>
 
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Email</label>
                     <input type="text" class="form-control" id="recipient-name" name="Email"
-                        value="<?php echo htmlspecialchars($table['Email']); ?>">
+                        value="<?php echo htmlspecialchars($table['Email']); ?>" required>
                 </div>
 
                 <div class="">
@@ -78,12 +78,12 @@
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Age</label>
                     <input type="text" class="form-control" id="recipient-name" name="Age"
-                        value="<?php echo htmlspecialchars($table['Age']); ?>">
+                        value="<?php echo htmlspecialchars($table['Age']); ?>" required>
                 </div>
 
                 <div class="">
                     <label for="organization-select" class="col-form-label">Organization</label>
-                    <select class="form-control" id="organization-select" name="Organization">
+                    <select class="form-control" id="organization-select" name="Organization" required>
 
                         <!-- POPULATE OPTIONS FROM DATABASE -->
                         <?php

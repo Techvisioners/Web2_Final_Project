@@ -52,7 +52,7 @@
 
                     <!-- 2-->
                     <div class="card__items card__items--rose col-md-3 position-relative clickable"
-                        onclick="location.href='list_view.php'">
+                        onclick="location.href='trail_report2.php'">
                         <div class="card__auditTrail d-flex flex-column gap-2 mt-3">
                             <i class="far fa-flag h3"></i>
                             <span><b>Audit Trail</b><br>

@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 
         if ($row && $row['Password'] === $password) {
             session_start();
-            $_SESSION['name'] = $row['username'];
+            $_SESSION['name'] = $row['Username'];
             $_SESSION['email'] = $row['Email'];
             $_SESSION['pass'] = $row['Password'];
 

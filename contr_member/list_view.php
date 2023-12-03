@@ -20,6 +20,10 @@
         <?php
         include "../contr_main/sidebar.php";
         include '../system/toast.php';
+
+        //CHECK IF ALREADY LOGGED-IN OR NOT
+        include '../system/checkLogged.php';
+        checkLoggedStatus();        
         ?>
 
 
@@ -44,6 +48,7 @@
             unset($_SESSION['error_toast']);
         }
         ?>    
+
 
         <!-- CONTENT PAGE -->
         <div class="container-fluid background_main_white px-4">

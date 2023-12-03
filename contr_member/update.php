@@ -12,9 +12,12 @@
 </head>
 
 <body class="update_body background_main_white">
+
     <?php
     session_start();
     include '../conn.php';
+    include '../system/checkLogged.php';
+    checkLoggedStatus();    
 
     //RETRIEVE ID FROM GET PARAMETER ID from list
     $_SESSION["id"] = $_GET['Id'];

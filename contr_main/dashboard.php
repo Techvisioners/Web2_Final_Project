@@ -15,11 +15,14 @@
 
 <body class="bg-content">
     <main class="dashboard d-flex">
+        
         <!-- start sidebar -->
-
         <?php
         include "sidebar.php";
         include '../conn.php';
+        include '../system/checkLogged.php';
+        checkLoggedStatus();
+
         // Count members
         $count_members_query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM member_list");
         $count_members_data = mysqli_fetch_assoc($count_members_query);
@@ -30,7 +33,6 @@
         $count_users_data = mysqli_fetch_assoc($count_users_query);
         $count_users = $count_users_data['count'];
         ?>
-        <!-- end sidebar -->
 
         <!-- start content page -->
         <div class="container-fluid background_main_white px">

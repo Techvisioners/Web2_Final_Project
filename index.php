@@ -12,9 +12,23 @@
 </head>
 
 <body>
+
   <main class="bg-sign-in d-flex justify-content-center align-items-center">
     <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
-      
+
+    <?php
+      session_start();
+      //CHECK IF ALREADY LOGGED-IN OR NOT
+      include './system/checkLogged.php';
+      checkLoggedStatus();
+
+      //IF ALREADY LOGGED IN, GO TO DASHBOARD
+      if (isset($_SESSION['email']) && isset($_SESSION['login_otp']) && isset($_SESSION['pass'])) {
+        header("Location: ./contr_main/dashboard.php");
+        exit();
+      }
+    ?>
+
       <div>
         <h1 class="sign-in text-uppercase">LOGIN</h1>
         <p>Church Member Management<br><b>ADMIN PANEL</b></p>
@@ -34,7 +48,7 @@
         }
       }
       ?>
-      
+
       <form method="POST" action="login_process.php">
 
         <div class="mb-3 mt-3 text-start">
@@ -43,7 +57,7 @@
             echo $_COOKIE['email'];
           } ?>">
         </div>
-        
+
         <div class="mb-3 text-start">
           <label for="pwd">Password</b></label>
           <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass" value="<?php if (isset($_COOKIE['password'])) {

@@ -40,27 +40,48 @@
                 <div class="cards row gap-3 justify-content-center mt-5">
 
                     <!-- 1-->
-                    <div class="card__items card__items--blue col-md-3 position-relative clickable"
-                        onclick="location.href='list_view.php'">
+                    <div class="card__items card__items--rose col-md-3 position-relative clickable"
+                        onclick="location.href='../contr_reports/gen_trail_report.php'">
                         <div class="card__members d-flex flex-column gap-2 mt-3">
                             <i class="far fa-file-pdf h3"></i>
-                            <span><b>Church Members</b><br>
-                                <p>Click to generate report</p>
+                            <span><b>Audit Trail</b><br>
+                                <p class="small text-muted">Click to generate report</p>
                             </span>
                         </div>
                     </div>
 
                     <!-- 2-->
-                    <div class="card__items card__items--rose col-md-3 position-relative clickable"
-                        onclick="location.href='trail_report2.php'">
-                        <div class="card__auditTrail d-flex flex-column gap-2 mt-3">
-                            <i class="far fa-flag h3"></i>
-                            <span><b>Audit Trail</b><br>
-                                <p>Click to generate report</p>
+                    <div class="card__items card__items--blue col-md-3 position-relative clickable"
+                        onclick="location.href='../contr_reports/gen_member_report.php'">
+                        <div class="card__members d-flex flex-column gap-2 mt-3">
+                            <i class="far fa-file-pdf h3"></i>
+                            <span><b>List of Church Members</b><br>
+                                <p class="small text-muted">Click to generate report</p>
                             </span>
                         </div>
-                    </div>                    
-
+                    </div> 
+                    
+                    <!-- 3-->
+                    <div class="card__items card__items--yellow col-md-3 position-relative clickable"
+                        onclick="location.href='../contr_reports/gen_orgs_report.php'">
+                        <div class="card__members d-flex flex-column gap-2 mt-3">
+                            <i class="far fa-file-pdf h3"></i>
+                            <span><b>List of Church Organizations</b><br>
+                                <p class="small text-muted">Click to generate report</p>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- 4-->
+                    <div class="card__items card__items--blue col-md-3 position-relative clickable"
+                        onclick="location.href='../contr_reports/gen_sysusers_report.php'">
+                        <div class="card__members d-flex flex-column gap-2 mt-3">
+                            <i class="far fa-file-pdf h3"></i>
+                            <span><b>List of Admin Accounts</b><br>
+                                <p class="small text-muted">Click to generate report</p>
+                            </span>
+                        </div>
+                    </div>
 
                 </div>
 

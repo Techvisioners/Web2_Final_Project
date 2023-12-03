@@ -30,6 +30,11 @@
         $count_org_query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM organizations");
         $count_org_data = mysqli_fetch_assoc($count_org_query);
         $count_org = $count_org_data['count'];
+
+        //count trail
+        $count_trail_query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM activity_logs");
+        $count_trail_data = mysqli_fetch_assoc($count_trail_query);
+        $count_trail = $count_trail_data['count'];        
         
         ?>
         <!-- end sidebar -->
@@ -56,7 +61,7 @@
                         <div class="card__org d-flex flex-column gap-2 mt-3">
                             <i class="far fa-bookmark h3"></i>
                             <span><b>Organizations</b><br>
-                                <p>Click to manage data</p>
+                                <p class="small text-muted">Click to manage organizations</p>
                             </span>
                         </div>
                         <div class="card__count">
@@ -71,8 +76,8 @@
                         onclick="location.href='../contr_sysusers/list_view.php'">
                         <div class="card__account d-flex flex-column gap-2 mt-3">
                             <i class="far fa-lock h3"></i>
-                            <span><b>Accounts</b><br>
-                                <p>Click to manage system accounts</p>
+                            <span><b>Admin Accounts</b><br>
+                                <p class="small text-muted">Click to manage admin system accounts</p>
                             </span>
                         </div>
                         <div class="card__count">
@@ -81,6 +86,22 @@
                             </span>
                         </div>
                     </div>
+
+                    <!-- 3-->
+                    <div class="card__items card__items--yellow col-md-3 position-relative clickable"
+                        onclick="location.href='../contr_trailview/list_view.php'">
+                        <div class="card__trail d-flex flex-column gap-2 mt-3">
+                            <i class="far fa-flag h3"></i>
+                            <span><b>Audit Trail</b><br>
+                                <p class="small text-muted">Click to view audit trail</p>
+                            </span>
+                        </div>
+                        <div class="card__count">
+                            <span class="h5 fw-bold nbr">
+                                <?php echo $count_trail; ?>
+                            </span>
+                        </div>
+                    </div>                    
 
 
                 </div>

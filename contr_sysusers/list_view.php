@@ -52,10 +52,17 @@
             <!-- CONTENT PAGE HEADER (title, border, button) -->
             <div class="member-list-header d-flex justify-content-between align-items-center py-2">
                 <div class="title h6 fw-bold">Admin Panel Accounts</div>
+
+                <!-- BUTTONS -->
                 <div class="btn-add d-flex gap-3 align-items-center">
+                    <!-- GENERATE REPORT BUTTON -->
+                    <a href="../contr_reports/gen_sysusers_report.php" class="btn btn-primary" target="_blank">
+                        <i class="far fa-file-pdf me-2 text-white"></i>REPORT
+                    </a>
                     <!-- ADD BUTTON -->
                     <?php include 'add.php'; ?>
                 </div>
+
             </div>
 
             <!-- TABLE VIEW -->

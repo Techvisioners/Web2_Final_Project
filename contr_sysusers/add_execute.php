@@ -13,6 +13,14 @@ if (isset($_POST['submit'])) {
     $Username = $_POST['Username'];
     $Email = $_POST['Email'];
     $Password = $_POST['Password'];
+    $ConfirmPassword = $_POST['ConfirmPassword'];
+
+    //CHECK IF PASSWORD MATCH
+    if ($Password !== $ConfirmPassword) {
+        $_SESSION['error_toast'] = "Passwords not match!";
+        header('Location: list_view.php');
+        exit;
+    }
 
     //SAVE DATA TO DB
     try {

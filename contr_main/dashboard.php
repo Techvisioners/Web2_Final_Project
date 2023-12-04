@@ -23,45 +23,62 @@
         include '../system/checkLogged.php';
         checkLoggedStatus();
 
-        // Count members
+        //Count members
         $count_members_query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM member_list");
         $count_members_data = mysqli_fetch_assoc($count_members_query);
         $count_members = $count_members_data['count'];
 
-        // Count users
+        //Count users
         $count_users_query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM users");
         $count_users_data = mysqli_fetch_assoc($count_users_query);
         $count_users = $count_users_data['count'];
+
+        //count org
+        $count_org_query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM organizations");
+        $count_org_data = mysqli_fetch_assoc($count_org_query);
+        $count_org = $count_org_data['count'];
         ?>
 
         <!-- start content page -->
         <div class="container-fluid background_main_white px">
-            
             <?php
             include "header.php";
             ?>
 
             <div class="cards row gap-3 justify-content-center mt-5">
 
-                <div class=" card__items card__items--blue col-md-3 position-relative">
+
+                <div class=" card__items card__items--blue col-md-3 position-relative clickable" onclick="location.href='../contr_member/list_view.php'">
                     <div class="card__members d-flex flex-column gap-2 mt-3">
                         <i class="far fa-user-check h3"></i>
                         <span>Church Members</span>
                     </div>
                     <div class="card__count_members">
-                        <span class="h5 fw-bold nbr">
+                        <span class="h2 fw-bold nbr">
                             <?php echo $count_members; ?>
                         </span>
                     </div>
                 </div>
 
-                <div class="card__items card__items--gradient col-md-3 position-relative">
+                <div class=" card__items card__items--rose col-md-3 position-relative clickable" onclick="location.href='../contr_orgs/list_view.php'">
+                    <div class="card__orgs d-flex flex-column gap-2 mt-3">
+                        <i class="far fa-user-check h3"></i>
+                        <span>Organizations</span>
+                    </div>
+                    <div class="card__count_orgs">
+                        <span class="h2 fw-bold nbr">
+                            <?php echo $count_org; ?>
+                        </span>
+                    </div>
+                </div>                
+
+                <div class="card__items card__items--gradient col-md-3 position-relative clickable" onclick="location.href='../contr_sysusers/list_view.php'">
                     <div class="card__users d-flex flex-column gap-2 mt-3">
                         <i class="fal fa-user h3"></i>
-                        <span>System Users</span>
+                        <span>System Admin Accounts</span>
                     </div>
                     <div class="card__count_users">
-                        <span class="h5 fw-bold nbr">
+                        <span class="h2 fw-bold nbr">
                             <?php echo $count_users; ?>
                         </span>
                     </div>

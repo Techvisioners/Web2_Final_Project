@@ -35,57 +35,106 @@
             </div>
 
             <!-- cards -->
-            <div class="cards-container d-flex justify-content-center align-items-center mt-5">
+            <div>
 
                 <div class="cards row gap-3 justify-content-center mt-5">
 
                     <!-- 1-->
-                    <div class="card__items card__items--rose col-md-3 position-relative clickable"
-                        onclick="location.href='../contr_reports/gen_trail_report.php'">
-                        <div class="card__members d-flex flex-column gap-2 mt-3">
+                    <div class="card__items card__items--rose col-md-1 position-relative clickable">
+                        <div class="card__members d-flex flex-column gap-2 mt-2">
                             <i class="far fa-file-pdf h3"></i>
-                            <span><b>Audit Trail</b><br>
-                                <p class="small text-muted">Click to generate report</p>
+                            <span>
+                                <b>Audit Trail</b><br>
+                                <p class="small text-muted mb-0">View or generate report</p>
                             </span>
+                            <!-- BUTTONS -->
+                            <div class="d-flex justify-content-end align-items-end">
+                                <!-- DOWNLOAD BUTTON -->
+                                <button class="btn me-0" onclick="location.href='../contr_reports/gen_trail_report.php'"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download Report">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <!-- LIST VIEW BUTTON -->
+                                <button class="btn" onclick="window.open('../contr_trailview/list_view.php', '_blank')"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="List View"><i class="fas fa-list"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <!-- 2-->
-                    <div class="card__items card__items--blue col-md-3 position-relative clickable"
-                        onclick="location.href='../contr_reports/gen_member_report.php'">
-                        <div class="card__members d-flex flex-column gap-2 mt-3">
+                    <div class="card__items card__items--blue col-md-1 position-relative clickable">
+                        <div class="card__members d-flex flex-column gap-2 mt-2">
                             <i class="far fa-file-pdf h3"></i>
-                            <span><b>List of Church Members</b><br>
-                                <p class="small text-muted">Click to generate report</p>
+                            <span>
+                                <b>List of Church Members</b><br>
+                                <p class="small text-muted mb-0">View or generate report</p>
                             </span>
-                        </div>
-                    </div> 
-                    
-                    <!-- 3-->
-                    <div class="card__items card__items--yellow col-md-3 position-relative clickable"
-                        onclick="location.href='../contr_reports/gen_orgs_report.php'">
-                        <div class="card__members d-flex flex-column gap-2 mt-3">
-                            <i class="far fa-file-pdf h3"></i>
-                            <span><b>List of Church Organizations</b><br>
-                                <p class="small text-muted">Click to generate report</p>
-                            </span>
+                            <!-- BUTTONS -->
+                            <div class="d-flex justify-content-end align-items-end">
+                                <!-- DOWNLOAD BUTTON -->
+                                <button class="btn me-0" onclick="location.href='../contr_reports/gen_member_report.php'"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download Report">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <!-- LIST VIEW BUTTON -->
+                                <button class="btn" onclick="window.open('../contr_member/list_view.php', '_blank')"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="List View"><i class="fas fa-list"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- 4-->
-                    <div class="card__items card__items--blue col-md-3 position-relative clickable"
-                        onclick="location.href='../contr_reports/gen_sysusers_report.php'">
-                        <div class="card__members d-flex flex-column gap-2 mt-3">
+
+                    <!-- 3-->
+                    <div class="card__items card__items--yellow col-md-1 position-relative clickable">
+                        <div class="card__members d-flex flex-column gap-2 mt-2">
                             <i class="far fa-file-pdf h3"></i>
-                            <span><b>List of Admin Accounts</b><br>
-                                <p class="small text-muted">Click to generate report</p>
+                            <span>
+                                <b>List of Organizations</b><br>
+                                <p class="small text-muted mb-0">View or generate report</p>
                             </span>
+                            <!-- BUTTONS -->
+                            <div class="d-flex justify-content-end align-items-end">
+                                <!-- DOWNLOAD BUTTON -->
+                                <button class="btn me-0" onclick="location.href='../contr_reports/gen_orgs_report.php'"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download Report">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <!-- LIST VIEW BUTTON -->
+                                <button class="btn" onclick="window.open('../contr_orgs/list_view.php', '_blank')"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="List View"><i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4-->
+                    <div class="card__items card__items--blue col-md-1 position-relative clickable">
+                        <div class="card__members d-flex flex-column gap-2 mt-2">
+                            <i class="far fa-file-pdf h3"></i>
+                            <span>
+                                <b>List of Admin Accounts</b><br>
+                                <p class="small text-muted mb-0">View or generate report</p>
+                            </span>
+                            <!-- BUTTONS -->
+                            <div class="d-flex justify-content-end align-items-end">
+                                <!-- DOWNLOAD BUTTON -->
+                                <button class="btn me-0" onclick="location.href='../contr_reports/gen_sysusers_report.php'"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download Report">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <!-- LIST VIEW BUTTON -->
+                                <button class="btn" onclick="window.open('../contr_sysusers/list_view.php', '_blank')"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="List View"><i class="fas fa-list"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
             </div>
+
         </div>
         <!-- end contentpage -->
     </main>

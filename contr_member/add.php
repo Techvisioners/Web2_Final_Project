@@ -33,19 +33,26 @@
               <input type="text" class="form-control" id="recipient-name" name="Name" required>
             </div>
 
-            <div class="">
+            <!-- <div class="">
               <label for="recipient-name" class="col-form-label">Email</label>
-              <input type="text" class="form-control" id="recipient-name" name="Email" required>
+              <input type="text" class="form-control" id="recipient-name" name="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+            </div> -->
+
+            <div class="">
+               <label for="recipient-name" class="col-form-label">Email</label>
+               <input type="email" class="form-control" id="recipient-name" name="Email" required onkeypress="return event.charCode !== 32">
+               <small id="emailHelp" class="form-text small text-muted">Please enter a valid email address.</small>
             </div>
 
             <div class="">
               <label for="recipient-name" class="col-form-label">Phone</label>
-              <input type="text" class="form-control" id="recipient-name" name="Phone">
+              <input type="tel" class="form-control" id="recipient-phone" name="Phone" pattern="(\+63|0)9\d{9}" required maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 11);">
+              <small id="phoneHelp" class="form-text small text-muted">Please enter a valid phone number.</small>
             </div>
 
             <div class="">
               <label for="recipient-name" class="col-form-label">Age</label>
-              <input type="text" class="form-control" id="recipient-name" name="Age" required>
+              <input type="text" class="form-control" id="recipient-name" name="Age" required maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 3);">
             </div>
 
             <div class="">

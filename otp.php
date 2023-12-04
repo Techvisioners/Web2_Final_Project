@@ -1,3 +1,8 @@
+<?php
+session_start();
+$email = $_SESSION['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +19,6 @@
 <body>
   <main class="bg-sign-in d-flex justify-content-center align-items-center">
     <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
-      
-    <?php
-      session_start();
-      //CHECK IF ALREADY LOGGED-IN OR NOT
-      include './system/checkLogged.php';
-      checkLoggedStatus();
-
-      //IF ALREADY LOGGED IN, GO TO DASHBOARD
-      if (isset($_SESSION['email']) && isset($_SESSION['login_otp']) && isset($_SESSION['pass'])) {
-        header("Location: ./contr_main/dashboard.php");
-        exit();
-      }
-    ?>
 
       <div>
         <h1 class="sign-in text-uppercase">OTP</h1>
@@ -47,12 +39,12 @@
         }
       }
       ?>
-      
-      <form method="POST" action="otp_process.php">
 
-        <div class="mb-3 mt-3 text-start">
-          <label for="email">OTP</label>
-          <input type="text" class="form-control" id="otp" placeholder="Enter OTP" name="otp">  
+      <form method="POST" action="otp_execute.php">
+
+        <div class="mb-3 mt-3 d-flex justify-content-center align-items-center flex-column">
+          <label for="otp" class="text-center mb-2"><b>OTP sent to</b> <?php echo $email ?></label>
+          <input type="text" class="form-control" id="otp" placeholder="Enter OTP" name="otp" maxlength="6" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 6);" required autofocus>
         </div>
 
         <button type="submit" name="submit" class="btn text-white w-100 text-uppercase">VERIFY</button>

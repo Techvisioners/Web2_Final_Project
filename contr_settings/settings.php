@@ -51,7 +51,7 @@
             </div>
 
             <!-- cards -->
-            <div class="cards-container d-flex justify-content-center align-items-center mt-5">
+            <div>
 
                 <div class="cards row gap-3 justify-content-center mt-5">
 

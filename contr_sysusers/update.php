@@ -46,19 +46,20 @@
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Username</label>
                     <input type="text" class="form-control" id="recipient-name" name="Username"
-                        value="<?php echo htmlspecialchars($table['Username']); ?>" required>
+                        value="<?php echo htmlspecialchars($table['Username']); ?>" required onkeypress="return event.charCode !== 32">
                 </div>
 
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Email</label>
-                    <input type="text" class="form-control" id="recipient-name" name="Email"
-                        value="<?php echo htmlspecialchars($table['Email']); ?>" required>
+                    <input type="email" class="form-control" id="recipient-name" name="Email"
+                        value="<?php echo htmlspecialchars($table['Email']); ?>" required onkeypress="return event.charCode !== 32">
+                    <small id="emailHelp" class="form-text small text-muted">Please enter a valid email address.</small>
                 </div>
 
                 <div class="">
                     <label for="recipient-name" class="col-form-label">Password</label>
                     <input type="password" class="form-control" id="recipient-name" name="Password"
-                        value="<?php echo htmlspecialchars($table['Password']); ?>" required>
+                        value="<?php echo htmlspecialchars($table['Password']); ?>" required onkeypress="return event.charCode !== 32">
                 </div>
 
             </div> <!-- END OF SCROLLABLE -->

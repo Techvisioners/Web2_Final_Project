@@ -101,10 +101,11 @@ input[type="password"]::placeholder {
 }
 
 .cards-container {
-    height: 40vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: auto;
 }
 
 .cards .card__items {

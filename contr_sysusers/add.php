@@ -23,19 +23,25 @@
           <!-- MODAL FORM -->
           <form method="POST" action="add_execute.php" enctype="multipart/form-data">
 
+          <div class="">
+            <label for="recipient-username" class="col-form-label">Username</label>
+            <input type="text" class="form-control" id="recipient-username" name="Username" required onkeypress="return event.charCode !== 32">
+          </div>
+
             <div class="">
-              <label for="recipient-name" class="col-form-label">Username</label>
-              <input type="text" class="form-control" id="recipient-name" name="Username" required>
+              <label for="recipient-email" class="col-form-label">Email</label>
+              <input type="email" class="form-control" id="recipient-email" name="Email" required onkeypress="return event.charCode !== 32">
+              <small id="emailHelp" class="form-text small text-muted">Please enter a valid email address.</small>
             </div>
 
             <div class="">
-              <label for="recipient-name" class="col-form-label">Email</label>
-              <input type="text" class="form-control" id="recipient-name" name="Email" required>
+              <label for="recipient-password" class="col-form-label">Password</label>
+              <input type="password" class="form-control" id="recipient-password" name="Password" autocomplete="off" required onkeypress="return event.charCode !== 32">
             </div>
 
             <div class="">
-              <label for="recipient-name" class="col-form-label">Password</label>
-              <input type="password" class="form-control" id="recipient-name" name="Password" required>
+              <label for="recipient-confirm-password" class="col-form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="recipient-confirm-password" name="ConfirmPassword" autocomplete="off" required onkeypress="return event.charCode !== 32">
             </div>
 
             <!-- MODAL FOOTER BUTTONS -->

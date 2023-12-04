@@ -36,14 +36,14 @@
             $warn_toast = Toast::warning($_SESSION['warn_toast']);
             echo $warn_toast;
             unset($_SESSION['warn_toast']);
-        }        
+        }
         //ERROR Toast
         if (isset($_SESSION['error_toast'])) {
             $error_toast = Toast::error($_SESSION['error_toast']);
             echo $error_toast;
             unset($_SESSION['error_toast']);
         }
-        ?>    
+        ?>
 
         <!-- CONTENT PAGE -->
         <div class="container-fluid background_main_white px-4">
@@ -97,8 +97,10 @@
 
                                     <!-- DATAs -->
                                     <td>
-                                        <span class="text-muted"><?php echo $row['Id']; ?></span>
-                                    </td>                                    
+                                        <span class="text-muted">
+                                            <?php echo $row['Id']; ?>
+                                        </span>
+                                    </td>
 
                                     <td>
                                         <?php echo $row['Username']; ?>
@@ -110,9 +112,21 @@
 
                                     <!-- ACTIONS -->
                                     <td class="d-md-flex gap-3 mt-3">
-                                        <a href="update.php?Id=<?php echo $row['Id']; ?>" title="Edit"><i class="far fa-pen"></i></a>
+
+                                        <?php
+                                        if ($_SESSION['name'] === $row['Username']) {
+                                            //DISPLAY UPDATE BUTTON, ONLY FOR CURRENT USER
+                                            ?>
+                                            <a href="update.php?Id=<?php echo $row['Id']; ?>" title="Edit"><i class="far fa-pen"></i></a>
+                                            <?php
+                                        }
+                                        ?>
+
+                                        <!--REMOVE BUTTON-->
                                         <a href="remove.php?Id=<?php echo $row['Id']; ?>" title="Delete" class="delete-member" data-id="<?php echo $row['Id']; ?>"><i class="far fa-trash"></i></a>
+                                    
                                     </td>
+
                                 </tr>
                                 <?php
                             }
@@ -142,4 +156,5 @@
     <script src="../js/bootstrap.bundle.js"></script>
 
 </body>
+
 </html>

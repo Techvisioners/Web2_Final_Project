@@ -3,7 +3,7 @@ let closemenu = document.querySelector(".close");
 let sidebar = document.querySelector(".bg-sidebar");
 let barhamburger = document.querySelector(".fa-bars");
 
-// function for login and sign up
+//SHOWING AND HIDING MENU
 menutoggle.addEventListener("click",function(){
     sidebar.classList.toggle("hidden-sidebar");
     menutoggle.classList.toggle("fa-rotate-270");

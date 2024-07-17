@@ -35,7 +35,7 @@
             echo $toast;
             unset($_SESSION['success_toast']);
         }
-        //ERROR Toast
+        //WARNJ Toast
         if (isset($_SESSION['warn_toast'])) {
             $warn_toast = Toast::warning($_SESSION['warn_toast']);
             echo $warn_toast;

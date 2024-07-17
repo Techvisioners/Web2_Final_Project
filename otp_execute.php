@@ -1,43 +1,51 @@
 <?php
+//INCLUDES
 session_start();
 include 'conn.php';
 include 'audit_trail.php';
 
+//SUBMIT ACTION
 if (isset($_POST['submit'])) {
-    $email = $_SESSION['email']; // Assuming you have stored email in the session
-
-    $otp_entered = $_POST['otp']; // Get the entered OTP from the form
+    $email = $_SESSION['email'];
+    $otp_entered = $_POST['otp'];
 
     $email = mysqli_real_escape_string($conn, $email);
     $otp_entered = mysqli_real_escape_string($conn, $otp_entered);
 
-    // Retrieve the saved OTP from the database for the provided email
+    //GET SAVED OTP FROM DATABASE
     $sql = "SELECT * FROM users WHERE Email = '$email'";
     $result = mysqli_query($conn, $sql);
 
+    //GET DATA FROM MYSQL RESULT SET
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+
+        //GET SAVED OTP FROM OTP COLUMN ON DV
         $saved_otp = $row['otp'] ?? '';
 
+        //IF ENTERED OTP AND SAVED OTP IS SAME = SUCCESS
         if ($otp_entered === $saved_otp) {
-            // OTP verification successful, proceed with your logic
-            // For example, redirect the user to a success page or perform any desired actions
+            //OTP SUCCESS
             logActivity("Logged-in");
             header("location: ./contr_main/dashboard.php");
             exit();
+
         } else {
-            // Invalid OTP, redirect back to the OTP verification page with an error
+            //INVALID OTP, DISPLAY ERROR
             header("Location: otp.php?error=invalid otp");
             exit();
         }
+
     } else {
-        // Handle database error or user not found
+        //DATABASE ERROR
         header("Location: otp.php?error=database_error");
         exit();
     }
+
 } else {
-    // Redirect back if the form was not submitted
+    //ERROR CATCHIBG
     header("Location: otp.php");
     exit();
 }
+
 ?>

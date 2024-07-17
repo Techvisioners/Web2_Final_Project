@@ -1,20 +1,21 @@
 <?php
 function checkLoggedStatus() {
     if (isset($_SESSION['email']) && isset($_SESSION['login_otp']) && isset($_SESSION['pass'])) {
-        // User is logged in
+        //USER IS LOGGED-IN
         $currentPage = basename($_SERVER['PHP_SELF']);
 
-        // Block access to index.php or otp.php if already logged in
+        //BLOCK ACCESS ON INDEX.PHP AND OTP PHP IF LOGGED-IN
         if ($currentPage === 'index.php' || $currentPage === 'otp.php') {
-            header("Location: ./contr_main/dashboard.php");
-            exit();
+            //BACK TO DASHBOARD.PHP ALWAYS
+            //header("Location: ./contr_main/dashboard.php");
+            //exit();
         }
         
     } else {
-        // User is not logged in
-        $allowedPages = array('index.php', 'otp.php');
-        if (!in_array(basename($_SERVER['PHP_SELF']), $allowedPages)) {
-            // Redirect to index.php from other pages
+        //USER NOT LOGGED-IN
+        $allowed = array('index.php', 'otp.php');
+        if (!in_array(basename($_SERVER['PHP_SELF']), $allowed)) {
+            //REDIRECT TO INDEX.PHP ALWAYS
             header("Location: ../index.php");
             exit();
         }

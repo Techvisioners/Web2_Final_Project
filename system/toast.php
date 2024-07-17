@@ -20,7 +20,6 @@ class toast {
     
     private static function displayToast($message, $type) {
 
-        //CREATE A JAVASCRIPT CODE SNIPPET THAT TRIGGERS THE SPECIFIED TOASTR NOTIFICATION
         switch ($type) {
             case 'success':
                 $method = 'toastr.success'; //TOASTR SUCCESS NOTIFICATION
@@ -39,7 +38,7 @@ class toast {
         }
 
 
-        //RETURN THE GENERATED JAVASCRIPT CODE FOR TOASTR
+        //RETURN THE JAVASCRIPT CODE FOR TOASTR
         $script = '
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

@@ -24,6 +24,9 @@ class PDF extends FPDF {
     //PAGE HEADER FUNCTION
     function Header() {
         //HEADER
+
+        $this->Image('https://i.imgur.com/eNFIuOd.png',10,10,40);
+
         $this->SetFont('Arial', 'B', 12);
         $this->Cell(0, 1, 'CH-MS MEMBER LIST REPORT', 0, 1, 'C');
         $this->SetFont('Arial', '', 10);
